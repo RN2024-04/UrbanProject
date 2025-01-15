@@ -1,0 +1,44 @@
+{% extends 'object_detection/base.html' %}
+
+
+{% block content%}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 bg-white p-4 mb-4 mx-3 rounded custom-shadow">
+                <h2 class="text-center mb-4">Registration</h2>
+                <form action="http://127.0.0.1:8000/login/" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+
+                        <div class="mb-3">
+                            <label for="id_username" class="form-label">Username:</label>
+                            <input type="text" class="form-control" name=username id="id_username" value="{% if form.id_username.value %}{{ form.id_username.value }}{% endif %}" placeholder="Enter your userename" гequired>
+                            <div>
+                                <li>required. 150 characters or fewer</li>
+                                <li>only letters, digits and @/./+/-</li>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_password" class="form-label">Password:</label>
+                            <input type="text" class="form-control" name=password id="id_password" value="{% if form.id_password.value %}{{ form.id_password.value }}{% endif %}" placeholder="Enter your password" гequired>
+                            <div>
+                                <li>your password can't be too similar to your other personal information</li>
+                                <li>your password must contain at least 8 characters</li>
+                                <li>your password can't be a commonly used password</li>
+                                <li>your password can't be entirely numeric</li>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_password2" class="form-label">Password confirmation:</label>
+                            <input type="text" class="form-control" name=password2 id="id_password2" value="{% if form.password2.value %}{{ form.password2.value }}{% endif %}" placeholder="Enter the same password as before, for verification"
+ гequired>
+                        </div>
+                    </div>
+                        <button type="submit" class="btn btn-dark btn-block btn-success">Enter</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
