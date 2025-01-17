@@ -6,8 +6,6 @@ class PeopleReg(models.Model):
     password=models.CharField(max_length=150, default='')
     password2=models.CharField(max_length=150, default='')
     USERNAME_FIELD = 'username'
-
-# cd detection_site
-# python manage.py makemigrations
-# python manage.py migrate
-
+    def save(self, *args, **kwargs):
+        # this will take care of the saving
+        super(PeopleReg, self).save(*args, **kwargs)
