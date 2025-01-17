@@ -15,9 +15,6 @@ aside {
     border-down: 5px solid #4d4d4d;
 }
 
-li a {
-    color: green;
-}
 
 .wrapper {
     min_height: 100vh;
@@ -27,4 +24,14 @@ li a {
 
 .sideMargin {
     margin: 0 30px;
+}
+
+mt-5 {
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: black;
+    text-align: center;
 }
